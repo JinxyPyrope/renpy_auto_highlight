@@ -1,33 +1,16 @@
-﻿# The script of the game goes in this file.
+﻿image i_zeil smile = At("zeil smile", sprite_highlight('zeil'))
+image i_anna neutral = At("anna neutral", sprite_highlight('anna'))
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+define character_zeil = Character("Zeil", image='i_zeil', callback=name_callback, cb_name = 'zeil')
+define character_anna = Character("Anna", image='i_anna', callback=name_callback, cb_name = 'anna')
 
-define e = Character("Eileen")
-
-
-# The game starts here.
 
 label start:
+    scene bg classroom
+    show i_zeil smile at right
+    show i_anna neutral at left
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
-    scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    show eileen happy
-
-    # These display lines of dialogue.
-
-    e "You've created a new Ren'Py game."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
-    # This ends the game.
+    character_zeil "Zeil is speaking!"
+    character_anna "Anna is speaking!"
 
     return
